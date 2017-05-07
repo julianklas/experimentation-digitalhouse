@@ -20,6 +20,17 @@ const app = express();
 
 app.set('view engine', 'pug');
 
+app.get('/', function (req, res) {
+
+  var page = (Math.random() < 0.5) ? 'A' : 'B';
+
+  res.render(page,
+    {
+      title: 'A/B testing'
+    }
+  );
+});
+
 app.get('/a', function (req, res) {
   res.render('A',
     {
@@ -36,6 +47,30 @@ app.get('/b', function (req, res) {
   );
 });
 
+app.get('/continua', function (req, res) {
+  res.render('continua',
+    {
+      title: 'A/B testing'
+    }
+  );
+});
+
+app.get('/abandona', function (req, res) {
+  res.render('abandona',
+    {
+      title: 'A/B testing'
+    }
+  );
+});
+
+
+app.get('/congrats', function (req, res) {
+  res.render('congrats',
+    {
+      title: 'A/B testing'
+    }
+  );
+});
 
 if (module === require.main) {
   // [START server]
