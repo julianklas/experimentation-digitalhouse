@@ -22,7 +22,7 @@ app.set('view engine', 'pug');
 
 app.get('/', function (req, res) {
 
-  var page = (Math.random() < 0.5) ? 'A' : 'B';
+  var page = 'A'; //(Math.random() < 0.5) ? 'A' : 'B';
 
   res.render(page,
     {
@@ -39,14 +39,6 @@ app.get('/a', function (req, res) {
   );
 });
 
-app.get('/b', function (req, res) {
-  res.render('B',
-    {
-      title: 'A/B testing'
-    }
-  );
-});
-
 app.get('/continua', function (req, res) {
   res.render('continua',
     {
@@ -57,15 +49,6 @@ app.get('/continua', function (req, res) {
 
 app.get('/abandona', function (req, res) {
   res.render('abandona',
-    {
-      title: 'A/B testing'
-    }
-  );
-});
-
-
-app.get('/congrats', function (req, res) {
-  res.render('congrats',
     {
       title: 'A/B testing'
     }
