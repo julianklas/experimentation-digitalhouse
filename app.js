@@ -20,14 +20,22 @@ const app = express();
 
 app.set('view engine', 'pug');
 
-app.get('/', function (req, res) {
-  res.render('index',
-  	{
-  		title: 'A/B testing',
-  		message: 'Vos y todos tus compañeros van a ganar $10 al final de esta clase si'
-  	}
+app.get('/a', function (req, res) {
+  res.render('A',
+    {
+      title: 'A/B testing'
+    }
   );
-})
+});
+
+app.get('/b', function (req, res) {
+  res.render('B',
+    {
+      title: 'A/B testing'
+    }
+  );
+});
+
 
 if (module === require.main) {
   // [START server]
