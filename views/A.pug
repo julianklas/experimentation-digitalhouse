@@ -5,6 +5,7 @@ html
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
 		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
 		script(src="https://cdn.optimizely.com/js/8370582094.js")
+		include analytics.pug
 
 	body
 		div(class='navbar navbar-default')
@@ -14,7 +15,7 @@ html
 		div(class='container')
 
 			div(class="row")
-				h3 "Viste 1 hora de una película que está pareciendote muy mala. Pagaste por esa entrada $140. Terminás de ver la media hora restante de película?"
+				h3 "Pagaste $140 por ver una película. Viste 1 hora y está pareciendote muy mala! Terminás de ver la media hora restante de película?"
 
 			div(class="row")
 				div(class="col-lg-6")
@@ -37,4 +38,3 @@ html
 		function abandonar() {
 			window.location.href = '/abandona';
 		}
-
