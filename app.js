@@ -5,33 +5,25 @@ const express = require('express');
 
 const app = express();
 
-app.set('view engine', 'pug');
+app.set('view engine', 'pug');  
 
-app.get('/', function (req, res) {
-
-  var page = 'A'; //(Math.random() < 0.5) ? 'A' : 'B';
-
-  res.render(page,
+app.get('/optimizely', function (req, res) {
+  res.render('baseline',
     {
-      title: 'A/B testing'
-    }
-  );
-});
-
-app.get('/a', function (req, res) {
-  res.render('A',
-    {
-      title: 'A/B testing'
+      title: 'A/B testing',
+      analytics: false,
+      optimizely: true
     }
   );
 });
 
 
 app.get('/analytics', function (req, res) {
-  res.render('A',
+  res.render('baseline',
     {
       title: 'A/B testing',
-      analytics: true
+      analytics: true,
+      optimizely: false
     }
   );
 });
@@ -40,7 +32,8 @@ app.get('/continua', function (req, res) {
   res.render('continua',
     {
       title: 'A/B testing',
-      tracking: 'analytics'
+      analytics: true,
+      optimizely: true
     }
   );
 });
@@ -48,7 +41,9 @@ app.get('/continua', function (req, res) {
 app.get('/abandona', function (req, res) {
   res.render('abandona',
     {
-      title: 'A/B testing'
+      title: 'A/B testing',
+      analytics: true,
+      optimizely: true
     }
   );
 });
