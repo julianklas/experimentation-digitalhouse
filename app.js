@@ -7,23 +7,10 @@ const app = express();
 
 app.set('view engine', 'pug');  
 
-app.get('/optimizely', function (req, res) {
+app.get('/', function (req, res) {
   res.render('baseline',
     {
-      title: 'A/B testing',
-      analytics: false,
-      optimizely: true
-    }
-  );
-});
-
-
-app.get('/analytics', function (req, res) {
-  res.render('baseline',
-    {
-      title: 'A/B testing',
-      analytics: true,
-      optimizely: false
+      title: 'A/B testing'
     }
   );
 });
@@ -31,9 +18,7 @@ app.get('/analytics', function (req, res) {
 app.get('/continua', function (req, res) {
   res.render('continua',
     {
-      title: 'A/B testing',
-      analytics: true,
-      optimizely: true
+      title: 'A/B testing'
     }
   );
 });
@@ -41,9 +26,7 @@ app.get('/continua', function (req, res) {
 app.get('/abandona', function (req, res) {
   res.render('abandona',
     {
-      title: 'A/B testing',
-      analytics: true,
-      optimizely: true
+      title: 'A/B testing'
     }
   );
 });
